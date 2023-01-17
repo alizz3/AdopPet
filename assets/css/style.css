@@ -1,0 +1,643 @@
+.hola{
+    width: 100%;
+    background-color: red;
+}
+.hiddenBody{
+    overflow: hidden;
+}
+.pre-loader{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.wheel-and-hamster {
+    --dur: 1s;
+    position: relative;
+    width: 12em;
+    height: 12em;
+    font-size: 14px;
+}
+
+.wheel,
+.hamster,
+.hamster div,
+.spoke {
+    position: absolute;
+}
+
+.wheel,
+.spoke {
+    border-radius: 50%;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.wheel {
+    background: radial-gradient(100% 100% at center, hsla(0, 0%, 60%, 0) 47.8%, hsl(0, 0%, 60%) 48%);
+    z-index: 2;
+}
+
+.hamster {
+    animation: hamster var(--dur) ease-in-out infinite;
+    top: 50%;
+    left: calc(50% - 3.5em);
+    width: 7em;
+    height: 3.75em;
+    transform: rotate(4deg) translate(-0.8em, 1.85em);
+    transform-origin: 50% 0;
+    z-index: 1;
+}
+
+.hamster__head {
+    animation: hamsterHead var(--dur) ease-in-out infinite;
+    background: hsl(30, 90%, 55%);
+    border-radius: 70% 30% 0 100% / 40% 25% 25% 60%;
+    box-shadow: 0 -0.25em 0 hsl(30, 90%, 80%) inset,
+        0.75em -1.55em 0 hsl(30, 90%, 90%) inset;
+    top: 0;
+    left: -2em;
+    width: 2.75em;
+    height: 2.5em;
+    transform-origin: 100% 50%;
+}
+
+.hamster__ear {
+    animation: hamsterEar var(--dur) ease-in-out infinite;
+    background: hsl(0, 90%, 85%);
+    border-radius: 50%;
+    box-shadow: -0.25em 0 hsl(30, 90%, 55%) inset;
+    top: -0.25em;
+    right: -0.25em;
+    width: 0.75em;
+    height: 0.75em;
+    transform-origin: 50% 75%;
+}
+
+.hamster__eye {
+    animation: hamsterEye var(--dur) linear infinite;
+    background-color: hsl(0, 0%, 0%);
+    border-radius: 50%;
+    top: 0.375em;
+    left: 1.25em;
+    width: 0.5em;
+    height: 0.5em;
+}
+
+.hamster__nose {
+    background: hsl(0, 90%, 75%);
+    border-radius: 35% 65% 85% 15% / 70% 50% 50% 30%;
+    top: 0.75em;
+    left: 0;
+    width: 0.2em;
+    height: 0.25em;
+}
+
+.hamster__body {
+    animation: hamsterBody var(--dur) ease-in-out infinite;
+    background: hsl(30, 90%, 90%);
+    border-radius: 50% 30% 50% 30% / 15% 60% 40% 40%;
+    box-shadow: 0.1em 0.75em 0 hsl(30, 90%, 55%) inset,
+        0.15em -0.5em 0 hsl(30, 90%, 80%) inset;
+    top: 0.25em;
+    left: 2em;
+    width: 4.5em;
+    height: 3em;
+    transform-origin: 17% 50%;
+    transform-style: preserve-3d;
+}
+
+.hamster__limb--fr,
+.hamster__limb--fl {
+    clip-path: polygon(0 0, 100% 0, 70% 80%, 60% 100%, 0% 100%, 40% 80%);
+    top: 2em;
+    left: 0.5em;
+    width: 1em;
+    height: 1.5em;
+    transform-origin: 50% 0;
+}
+
+.hamster__limb--fr {
+    animation: hamsterFRLimb var(--dur) linear infinite;
+    background: linear-gradient(hsl(30, 90%, 80%) 80%, hsl(0, 90%, 75%) 80%);
+    transform: rotate(15deg) translateZ(-1px);
+}
+
+.hamster__limb--fl {
+    animation: hamsterFLLimb var(--dur) linear infinite;
+    background: linear-gradient(hsl(30, 90%, 90%) 80%, hsl(0, 90%, 85%) 80%);
+    transform: rotate(15deg);
+}
+
+.hamster__limb--br,
+.hamster__limb--bl {
+    border-radius: 0.75em 0.75em 0 0;
+    clip-path: polygon(0 0, 100% 0, 100% 30%, 70% 90%, 70% 100%, 30% 100%, 40% 90%, 0% 30%);
+    top: 1em;
+    left: 2.8em;
+    width: 1.5em;
+    height: 2.5em;
+    transform-origin: 50% 30%;
+}
+
+.hamster__limb--br {
+    animation: hamsterBRLimb var(--dur) linear infinite;
+    background: linear-gradient(hsl(30, 90%, 80%) 90%, hsl(0, 90%, 75%) 90%);
+    transform: rotate(-25deg) translateZ(-1px);
+}
+
+.hamster__limb--bl {
+    animation: hamsterBLLimb var(--dur) linear infinite;
+    background: linear-gradient(hsl(30, 90%, 90%) 90%, hsl(0, 90%, 85%) 90%);
+    transform: rotate(-25deg);
+}
+
+.hamster__tail {
+    animation: hamsterTail var(--dur) linear infinite;
+    background: hsl(0, 90%, 85%);
+    border-radius: 0.25em 50% 50% 0.25em;
+    box-shadow: 0 -0.2em 0 hsl(0, 90%, 75%) inset;
+    top: 1.5em;
+    right: -0.5em;
+    width: 1em;
+    height: 0.5em;
+    transform: rotate(30deg) translateZ(-1px);
+    transform-origin: 0.25em 0.25em;
+}
+
+.spoke {
+    animation: spoke var(--dur) linear infinite;
+    background: radial-gradient(100% 100% at center, hsl(0, 0%, 60%) 4.8%, hsla(0, 0%, 60%, 0) 5%),
+        linear-gradient(hsla(0, 0%, 55%, 0) 46.9%, hsl(0, 0%, 65%) 47% 52.9%, hsla(0, 0%, 65%, 0) 53%) 50% 50% / 99% 99% no-repeat;
+}
+
+/* Animations */
+@keyframes hamster {
+
+    from,
+    to {
+        transform: rotate(4deg) translate(-0.8em, 1.85em);
+    }
+
+    50% {
+        transform: rotate(0) translate(-0.8em, 1.85em);
+    }
+}
+
+@keyframes hamsterHead {
+
+    from,
+    25%,
+    50%,
+    75%,
+    to {
+        transform: rotate(0);
+    }
+
+    12.5%,
+    37.5%,
+    62.5%,
+    87.5% {
+        transform: rotate(8deg);
+    }
+}
+
+@keyframes hamsterEye {
+
+    from,
+    90%,
+    to {
+        transform: scaleY(1);
+    }
+
+    95% {
+        transform: scaleY(0);
+    }
+}
+
+@keyframes hamsterEar {
+
+    from,
+    25%,
+    50%,
+    75%,
+    to {
+        transform: rotate(0);
+    }
+
+    12.5%,
+    37.5%,
+    62.5%,
+    87.5% {
+        transform: rotate(12deg);
+    }
+}
+
+@keyframes hamsterBody {
+
+    from,
+    25%,
+    50%,
+    75%,
+    to {
+        transform: rotate(0);
+    }
+
+    12.5%,
+    37.5%,
+    62.5%,
+    87.5% {
+        transform: rotate(-2deg);
+    }
+}
+
+@keyframes hamsterFRLimb {
+
+    from,
+    25%,
+    50%,
+    75%,
+    to {
+        transform: rotate(50deg) translateZ(-1px);
+    }
+
+    12.5%,
+    37.5%,
+    62.5%,
+    87.5% {
+        transform: rotate(-30deg) translateZ(-1px);
+    }
+}
+
+@keyframes hamsterFLLimb {
+
+    from,
+    25%,
+    50%,
+    75%,
+    to {
+        transform: rotate(-30deg);
+    }
+
+    12.5%,
+    37.5%,
+    62.5%,
+    87.5% {
+        transform: rotate(50deg);
+    }
+}
+
+@keyframes hamsterBRLimb {
+
+    from,
+    25%,
+    50%,
+    75%,
+    to {
+        transform: rotate(-60deg) translateZ(-1px);
+    }
+
+    12.5%,
+    37.5%,
+    62.5%,
+    87.5% {
+        transform: rotate(20deg) translateZ(-1px);
+    }
+}
+
+@keyframes hamsterBLLimb {
+
+    from,
+    25%,
+    50%,
+    75%,
+    to {
+        transform: rotate(20deg);
+    }
+
+    12.5%,
+    37.5%,
+    62.5%,
+    87.5% {
+        transform: rotate(-60deg);
+    }
+}
+
+@keyframes hamsterTail {
+
+    from,
+    25%,
+    50%,
+    75%,
+    to {
+        transform: rotate(30deg) translateZ(-1px);
+    }
+
+    12.5%,
+    37.5%,
+    62.5%,
+    87.5% {
+        transform: rotate(10deg) translateZ(-1px);
+    }
+}
+
+@keyframes spoke {
+    from {
+        transform: rotate(0);
+    }
+
+    to {
+        transform: rotate(-1turn);
+    }
+}
+
+
+#header {
+	position:absolute;
+	left:0;
+	right:0;
+	margin-top:15px;
+	z-index:22;
+}
+
+/* --- Top Nav --- */
+#header #top-nav .container {
+	padding: 10px 15px;
+	background-color: #FFF;
+}
+
+#top-nav .logo {
+	float:left;
+	height:50px;
+	padding:5px;
+}
+
+#top-nav .logo img {
+	max-height:40px;
+}
+
+#top-nav .social-nav {
+	float:right;
+}
+
+.social-nav li {
+	display:inline-block;
+	margin-top:5px;
+}
+
+.social-nav li a {
+	display: block;
+	width: 40px;
+	line-height: 40px;
+	text-align: center;
+	color: #969696;
+	border: 1px solid #ECECEC;
+	border-radius: 50%;
+	-webkit-transition:0.2s all;
+	transition:0.2s all;
+}
+
+.social-nav li a:hover , .social-nav li a:focus {
+	color: #FFF;
+	background-color: #03c54a;
+	border-color: #03c54a;
+}
+
+/* --- Bottom Nav --- */
+#header #bottom-nav .container {
+	padding:10px 15px;
+	background-color:#F9F9F9;
+}
+
+.main-nav li a , .contact-nav li a {
+	font-size:14px;
+}
+
+.main-nav li a:hover , .contact-nav li a:hover , .main-nav li a:focus , .contact-nav li a:focus {
+	background-color:transparent;
+	color: #03c54a;
+}
+
+.main-nav li a {
+	text-transform: uppercase;
+}
+
+.contact-nav {
+	float:right;
+}
+
+.contact-nav li i {
+	color:#03c54a;
+}
+
+.cta-nav {
+	float:right;
+}
+
+.cta-nav  li {
+	margin-top:5px;
+	display:inline-block;
+}
+
+.cta-nav li a {
+	padding: 8px 25px;
+	font-size: 14px;
+}
+
+/* --- Fixed Nav --- */
+@media only screen and (min-width: 767px) {
+	#header.fixed #bottom-nav  {
+		position: fixed;
+		right: 0;
+		left: 0;
+		top: 0;
+		margin: auto;
+		-webkit-box-shadow: 0px 3px 10px -3px  rgba(0, 0, 0, 0.1);
+		        box-shadow: 0px 3px 10px -3px  rgba(0, 0, 0, 0.1);
+		background: #FFF;
+		border: 1px solid #ECECEC;
+		-webkit-animation:slide-in 0.3s;
+		        animation:slide-in 0.3s;
+	}
+
+	#header.fixed #bottom-nav .container {
+		background-color:#FFF;
+	}
+}
+@-webkit-keyframes slide-in {
+	from {
+		-webkit-transform:translateY(-100%);
+		        transform:translateY(-100%);
+	}
+	to {
+		-webkit-transform:translateY(0%);
+		        transform:translateY(0%);
+	}
+}
+@keyframes slide-in {
+	from {
+		-webkit-transform:translateY(-100%);
+		        transform:translateY(-100%);
+	}
+	to {
+		-webkit-transform:translateY(0%);
+		        transform:translateY(0%);
+	}
+}
+
+/* --- Mobile Nav --- */
+@media only screen and (max-width: 767px) {
+	#header {
+		position:fixed;
+		margin-top:0px;
+		-webkit-box-shadow: 0px 3px 10px -3px rgba(0, 0, 0, 0.1);
+		        box-shadow: 0px 3px 10px -3px rgba(0, 0, 0, 0.1);
+	}
+
+	#header:after {
+		content:"";
+		position: fixed;
+		left:0;
+		right:0;
+		bottom:0;
+		top:0;
+		background-color: rgba(0, 0, 0, 0.5);
+		z-index: -1;
+		visibility:hidden;
+		opacity:0;
+		-webkit-transition: 0.2s all;
+		transition: 0.2s all;
+	}
+
+	#header.nav-collapse:after {
+		visibility:visible;
+		opacity:1;
+	}
+
+	#header #bottom-nav .container {
+		padding:0px;
+	}
+
+	#nav {
+		position: fixed;
+		max-width: 250px;
+		width:0%;
+		height: 100vh;
+		background: #151515;
+		top: 0;
+		left: 0;
+		padding-top: 80px;
+		overflow-x:hidden;
+		overflow-y:auto;
+		-webkit-transform:translateX(-100%);
+		    -ms-transform:translateX(-100%);
+		        transform:translateX(-100%);
+		-webkit-transition: 0.2s all;
+		transition: 0.2s all;
+	}
+
+	#header.nav-collapse #nav {
+		-webkit-transform:translateX(0%);
+		    -ms-transform:translateX(0%);
+		        transform:translateX(0%);
+		width:100%;
+	}
+
+	.main-nav {
+		margin:0;
+		text-align:center;
+		max-height:50%;
+		overflow-y:scroll;
+	}
+
+	.main-nav li a {
+		color: #fff;
+	}
+
+	.contact-nav {
+		float:none;
+		margin-top:15px;
+		text-align:center;
+	}
+
+	.contact-nav li {
+		display:block;
+	}
+
+	.contact-nav li a {
+		color: #fff;
+	}
+
+	.cta-nav {
+		float:none;
+		margin-top:15px;
+		text-align:center;
+	}
+}
+
+/* --- Navbar Toggle --- */
+.navbar-toggle {
+	position:relative;
+	width: 40px;
+	height: 40px;
+	border: none;
+	margin-top: 5px;
+	margin-left: 15px;
+	margin-right: 0px;
+	border-radius: 0;
+	padding:0;
+}
+
+.navbar-toggle span {
+	position: absolute;
+	top: 50%;
+    -webkit-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+            transform: translateY(-50%);
+	left: 5px;
+	-webkit-transition: 0.2s background;
+	transition: 0.2s background;
+}
+
+.navbar-toggle span:after , .navbar-toggle span:before {
+	content: "";
+	position: absolute;
+	left: 0;
+	-webkit-transition: 0.2s -webkit-transform;
+	transition: 0.2s -webkit-transform;
+	transition: 0.2s transform;
+	transition: 0.2s transform, 0.2s -webkit-transform;
+}
+
+.navbar-toggle span , .navbar-toggle span:after , .navbar-toggle span:before {
+	height: 2px;
+	width: 30px;
+	background-color: #151515;
+}
+
+.navbar-toggle span:before {
+	top: -10px;
+}
+
+.navbar-toggle span:after {
+	top: 10px;
+}
+
+#header.nav-collapse span {
+	background: transparent;
+}
+
+#header.nav-collapse span:before {
+    -webkit-transform: translateY(10px) rotate(45deg);
+        -ms-transform: translateY(10px) rotate(45deg);
+            transform: translateY(10px) rotate(45deg);
+}
+
+#header.nav-collapse span:after {
+    -webkit-transform: translateY(-10px) rotate(-45deg);
+        -ms-transform: translateY(-10px) rotate(-45deg);
+            transform: translateY(-10px) rotate(-45deg);
+}
