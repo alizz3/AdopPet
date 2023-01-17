@@ -1,0 +1,70 @@
+/*Pie de Página*/
+
+.pie-pagina{
+    width: 100%;
+    background-color: #C8B6FF;
+    
+}
+
+.pie-pagina .contacto{
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-gap: 50px;
+    padding: 45px 0px;
+}
+
+.pie-pagina .contacto .box figure{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pie-pagina .contacto .box figure img{
+    width: 170px;
+}
+
+.pie-pagina .contacto .box h2{
+    color: #ffff;
+    margin-bottom: 25px;
+    font-size: 20px;
+}
+.pie-pagina .contacto .box p{
+    color: #efefef;
+    margin-bottom: 10px;
+}
+
+.pie-pagina .contacto .red-social a{
+    display: inline-block;
+    text-decoration: none;
+    width: 45px;
+    height: 45px;
+    line-height: 45px;
+    color: #ffff;
+    margin-right: 20px;
+    text-align: center;
+    transition: all 300ms ease;
+    font-size: 30px;
+}
+
+.pie-pagina .contacto .red-social a:hover{
+    color: rgb(95, 241, 241);
+}
+
+.pie-pagina .copy{
+    background-color: #a689fc;
+    padding: 15px 10px;
+    text-align: center;
+    color: #ffff;
+    width: 100%;
+}
+.pie-pagina .copy small{
+    font-size: 15px;
+}
+
+
+
