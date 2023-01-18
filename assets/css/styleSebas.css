@@ -2,39 +2,47 @@
 
 .pie-pagina{
     width: 100%;
-    background-color: #C8B6FF;
+    background-color: rgb(173, 147, 250);
     
 }
 
 .pie-pagina .contacto{
     width: 100%;
+    height: 170px;
     max-width: 1200px;
     margin: auto;
     display: grid;
-    grid-template-columns: repeat(3,1fr);
+    grid-template-columns: repeat(2,1fr);
     grid-gap: 50px;
-    padding: 45px 0px;
+    padding: 34px 0px;
 }
 
 .pie-pagina .contacto .box figure{
     width: 100%;
     height: 100%;
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
+    margin: 0px;
 }
 
 .pie-pagina .contacto .box figure img{
-    width: 170px;
+    width: 78px;
+    margin-bottom: 28px;
+    transition: all 0.5s;
+}
+
+.pie-pagina .contacto .box figure img:hover{
+    transform: scale(1.1);
 }
 
 .pie-pagina .contacto .box h2{
     color: #ffff;
-    margin-bottom: 25px;
-    font-size: 20px;
+    margin-bottom: 13px;
+    font-size: 15px;
 }
 .pie-pagina .contacto .box p{
-    color: #efefef;
+    color: #fff;
     margin-bottom: 10px;
 }
 
@@ -49,21 +57,33 @@
     text-align: center;
     transition: all 300ms ease;
     font-size: 30px;
+    margin-bottom: 50px;
 }
 
 .pie-pagina .contacto .red-social a:hover{
-    color: rgb(95, 241, 241);
+    color: rgb(191, 132, 247);
+    transform: scale(1.4);
 }
 
 .pie-pagina .copy{
     background-color: #a689fc;
-    padding: 15px 10px;
+    padding: 1px 10px;
     text-align: center;
     color: #ffff;
     width: 100%;
 }
 .pie-pagina .copy small{
-    font-size: 15px;
+    font-size: 10px;
+}
+@media  screen and (max-width:800px) {
+    .pie-pagina .contacto{
+        width: 90%;
+        height: 170px;
+        grid-template-columns: repeat(1,1fr);
+        grid-gap: 30px;
+        padding: 24px 0px;
+    }
+    
 }
 
 
