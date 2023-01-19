@@ -8,22 +8,27 @@
 
 .pie-pagina .contacto{
     width: 100%;
-    height: 170px;
+    height: 160px;
     max-width: 1200px;
     margin: auto;
     display: grid;
-    grid-template-columns: repeat(2,1fr);
-    grid-gap: 50px;
-    padding: 34px 0px;
+    grid-template-columns: repeat(2,1fr) 540px;
+    
+    padding: 20px 0px;
+}
+
+.pie-pagina .contacto .box h2{
+    color: #ffff;
+    margin-bottom: 10px;
+    font-size: 15px;
 }
 
 .pie-pagina .contacto .box figure{
     width: 100%;
     height: 100%;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
-    margin: 0px;
 }
 
 .pie-pagina .contacto .box figure img{
@@ -36,33 +41,31 @@
     transform: scale(1.1);
 }
 
-.pie-pagina .contacto .box h2{
-    color: #ffff;
-    margin-bottom: 13px;
-    font-size: 15px;
-}
-.pie-pagina .contacto .box p{
-    color: #fff;
-    margin-bottom: 10px;
+.pie-pagina .contacto .red-social h2{
+    margin-left: 10px;
 }
 
 .pie-pagina .contacto .red-social a{
     display: inline-block;
     text-decoration: none;
     width: 45px;
-    height: 45px;
     line-height: 45px;
     color: #ffff;
-    margin-right: 20px;
+    margin-right: 10px;
     text-align: center;
     transition: all 300ms ease;
     font-size: 30px;
-    margin-bottom: 50px;
+
 }
 
 .pie-pagina .contacto .red-social a:hover{
-    color: rgb(191, 132, 247);
+    color: rgb(164, 70, 252);
     transform: scale(1.4);
+}
+
+.pie-pagina .contacto .box p{
+    color: #fff;
+    margin-bottom: 10px;
 }
 
 .pie-pagina .copy{
@@ -75,15 +78,24 @@
 .pie-pagina .copy small{
     font-size: 10px;
 }
-@media  screen and (max-width:800px) {
+@media  screen and (max-width:900px) {
     .pie-pagina .contacto{
-        width: 90%;
-        height: 170px;
-        grid-template-columns: repeat(1,1fr);
-        grid-gap: 30px;
-        padding: 24px 0px;
+        height: 205px;      
     }
-    
+
+    .pie-pagina .contacto .red-social a{
+        width: 30px;
+        line-height: 45px;
+        font-size: 20px;     
+    }
+
+    .pie-pagina .contacto .box figure{
+        display: inline-block;
+        margin: 0;
+    }
+
+
+
 }
 
 
