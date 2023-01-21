@@ -50,12 +50,12 @@ footer{
 .footer-redesociales a{
     text-decoration: none;
     color: #fff;
-    transition: all 200ms ease;
+    transition: all 300ms ease;
 }
 
 .footer-redesociales a i{
     font-size: 1.1 rem;
-    transition: color .3s ease;
+    transition: color .4s ease;
 }
 
 .footer-redesociales a:hover i{
