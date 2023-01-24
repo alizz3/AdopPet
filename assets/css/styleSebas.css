@@ -216,6 +216,11 @@ footer{
     :root{
         --colorTextos: #4c4b50;
     }
+
+    .input-login:focus~label,
+    .input-login:valid~label{
+    font-size: 18px;
+    }
     
 }
 
@@ -322,6 +327,11 @@ footer{
 @media screen and(max-width:500px){
     .form-signin{
         width: 80%;
+    }
+
+    .input-login:focus~label,
+    .input-login:valid~label{
+    font-size: 18px;
     }
     
 }
